@@ -21,9 +21,14 @@ namespace ByteBank.SistemaAgencia
             idades[2] = 35;
             idades[3] = 50;
             idades[4] = 55;
+
+            int idadeNoIndice4 = idades[4];
         
-            Console.WriteLine(idades[4]);
-            
+            Console.WriteLine(idadeNoIndice4);
+
+            int[] outroArray = idades;
+            Console.WriteLine(outroArray[3]);
+
             Console.ReadLine();
         }
     }
