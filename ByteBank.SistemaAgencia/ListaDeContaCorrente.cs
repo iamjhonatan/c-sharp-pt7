@@ -8,9 +8,9 @@ namespace ByteBank.SistemaAgencia
         private ContaCorrente[] _itens; // Nome de campo privado inicializado com '_' (convenção).
         private int _proximaPosicao;
 
-        public ListaDeContaCorrente()
+        public ListaDeContaCorrente(int capacidadeInicial = 5)
         {
-            _itens = new ContaCorrente[5];
+            _itens = new ContaCorrente[capacidadeInicial];
             _proximaPosicao = 0;
         }
 
@@ -28,10 +28,14 @@ namespace ByteBank.SistemaAgencia
         {
             if (_itens.Length >= tamanhoNecessario)
                 return;
+
+            int novoTamanho = _itens.Length * 2;
+            if (novoTamanho < tamanhoNecessario)
+                novoTamanho = tamanhoNecessario;
             
             Console.WriteLine("Aumentando a capacidade da lista.");
 
-            ContaCorrente[] novoArray = new ContaCorrente[tamanhoNecessario];
+            ContaCorrente[] novoArray = new ContaCorrente[novoTamanho];
 
             for (int indice = 0; indice < _itens.Length; indice++)
             {
