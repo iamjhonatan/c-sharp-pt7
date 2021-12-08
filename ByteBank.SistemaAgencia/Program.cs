@@ -23,14 +23,12 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(874, 12310));
             ContaCorrente contaDoJhojho = new ContaCorrente(1111, 1222);
 
-            lista.Adicionar(contaDoJhojho);
-            
-            lista.EscreverListaNaTela();
-            
-            lista.Remover(contaDoJhojho);
-            
-            lista.EscreverListaNaTela();
-            
+            for (int i = 0; i < lista.Tamanho; i++)
+            {
+                ContaCorrente itemAtual = lista[i];
+                Console.WriteLine($"item na posição {i} = Conta {itemAtual.Numero}/{itemAtual.Agencia}");
+            }
+
             Console.ReadLine();
         }
 
