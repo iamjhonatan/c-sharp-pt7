@@ -21,6 +21,15 @@ namespace ByteBank.SistemaAgencia
             lista.Adicionar(new ContaCorrente(874, 1238));
             lista.Adicionar(new ContaCorrente(874, 1239));
             lista.Adicionar(new ContaCorrente(874, 12310));
+            ContaCorrente contaDoJhojho = new ContaCorrente(1111, 1222);
+
+            lista.Adicionar(contaDoJhojho);
+            
+            lista.EscreverListaNaTela();
+            
+            lista.Remover(contaDoJhojho);
+            
+            lista.EscreverListaNaTela();
             
             Console.ReadLine();
         }
