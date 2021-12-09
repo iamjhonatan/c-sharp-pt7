@@ -13,15 +13,17 @@ namespace ByteBank.SistemaAgencia
         static void Main(string[] args)
         {
             ListaDeContaCorrente lista = new ListaDeContaCorrente();
-
-            lista.Adicionar(new ContaCorrente(874, 1234));
-            lista.Adicionar(new ContaCorrente(874, 1235));
-            lista.Adicionar(new ContaCorrente(874, 1236));
-            lista.Adicionar(new ContaCorrente(874, 1237));
-            lista.Adicionar(new ContaCorrente(874, 1238));
-            lista.Adicionar(new ContaCorrente(874, 1239));
-            lista.Adicionar(new ContaCorrente(874, 12310));
+            
             ContaCorrente contaDoJhojho = new ContaCorrente(1111, 1222);
+
+            ContaCorrente[] contas = new ContaCorrente[]
+            {
+                contaDoJhojho,
+                new ContaCorrente(874, 1239),
+                new ContaCorrente(874, 12310)
+            };
+
+            lista.AdicionarVarios(contas);
 
             for (int i = 0; i < lista.Tamanho; i++)
             {
